@@ -14,6 +14,7 @@ This architecure features one vpc. It has three subnet groups(public,data and se
 
 The ECS clusters holds two services. One for services and another for the workers.
 
+![alt text](https://github.com/0xMeechie/aws-cdk-assignment/blob/main/ecs.drawio?raw=true)
 
 
 ## Installing Node.js 
