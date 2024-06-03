@@ -1,0 +1,515 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "AwsEcsCdkGoStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "AwsEcsCdkGoStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "AwsEcsCdkGoStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://253086827081/us-east-2",
+      "properties": {
+        "templateFile": "AwsEcsCdkGoStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::253086827081:role/cdk-hnb659fds-deploy-role-253086827081-us-east-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::253086827081:role/cdk-hnb659fds-cfn-exec-role-253086827081-us-east-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-253086827081-us-east-2/d46053a0a3dc85cc8452b41126d24584e06cb77bc66ee31cb585ef0b70ac213d.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "AwsEcsCdkGoStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::253086827081:role/cdk-hnb659fds-lookup-role-253086827081-us-east-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "AwsEcsCdkGoStack.assets"
+      ],
+      "metadata": {
+        "/AwsEcsCdkGoStack/VPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCB9E5F0B4"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1SubnetB4246D30"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1RouteTableFEE4B781"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1RouteTableAssociation0B0896DC"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1DefaultRoute91CEF279"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1EIP6AD938E8"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1NATGatewayE0556630"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2Subnet74179F39"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2RouteTable6F1A15F1"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2RouteTableAssociation5A808732"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2DefaultRouteB7481BBA"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2EIP4947BC00"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2NATGateway3C070193"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet3/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet3Subnet631C5E25"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet3/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet3RouteTable98AE0E14"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet3/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet3RouteTableAssociation427FE0C6"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet3/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet3DefaultRouteA0D29D46"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet3/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet3EIPAD4BC883"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/PublicSubnet3/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet3NATGatewayD3048F5C"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet1Subnet9F6EC40B"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet1RouteTableC3604603"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet1RouteTableAssociationD3C217C6"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet1DefaultRoute48BAD63B"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet2SubnetAA5CEDCB"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet2RouteTable629F5FAB"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet2RouteTableAssociation8D67A390"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet2DefaultRoute8415FD9F"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet3/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet3Subnet149E4772"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet3/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet3RouteTable97314949"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet3/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet3RouteTableAssociationCD85C96B"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/ServiceSubnet3/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServiceSubnet3DefaultRoute584CFB8B"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet1Subnet6EE5F581"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet1RouteTableBF05C1EE"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet1RouteTableAssociation8B02A4E9"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet2Subnet2A2478A7"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet2RouteTable07099A22"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet2RouteTableAssociation2C27F1A0"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet3/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet3Subnet6CB0EF39"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet3/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet3RouteTableA87E0911"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/DataSubnet3/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCDataSubnet3RouteTableAssociation26490282"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCIGWB7E252D3"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCVPCGW99B986DC"
+          }
+        ],
+        "/AwsEcsCdkGoStack/VPC/RestrictDefaultSecurityGroupCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCRestrictDefaultSecurityGroupCustomResource59474679"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Repo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Repo02AC86CF"
+          }
+        ],
+        "/AwsEcsCdkGoStack/cluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cluster611F8AFF"
+          }
+        ],
+        "/AwsEcsCdkGoStack/cluster/DefaultServiceDiscoveryNamespace/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "clusterDefaultServiceDiscoveryNamespaceFB8579F8"
+          }
+        ],
+        "/AwsEcsCdkGoStack/ECS_sg/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECSsgE469BF7F"
+          }
+        ],
+        "/AwsEcsCdkGoStack/ECS_sg/from AwsEcsCdkGoStackworkerLBSecurityGroupADEE8FB1:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECSsgfromAwsEcsCdkGoStackworkerLBSecurityGroupADEE8FB1804CEA962C"
+          }
+        ],
+        "/AwsEcsCdkGoStack/ECS_sg/from AwsEcsCdkGoStackserviceLBSecurityGroup0CF4DB01:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECSsgfromAwsEcsCdkGoStackserviceLBSecurityGroup0CF4DB01804FC452AB"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Worker_task/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WorkertaskTaskRoleC23F2E98"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Worker_task/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Workertask7FDF05ED"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Worker_task/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WorkertaskExecutionRole185A73D8"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Worker_task/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WorkertaskExecutionRoleDefaultPolicyE7FE1B62"
+          }
+        ],
+        "/AwsEcsCdkGoStack/workers_fargate/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workersfargateService08B9DEE7"
+          }
+        ],
+        "/AwsEcsCdkGoStack/workers_fargate/CloudmapService/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workersfargateCloudmapServiceA1C1F228"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Service_task/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServicetaskTaskRole3F8102FD"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Service_task/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Servicetask9BF51D2A"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Service_task/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServicetaskExecutionRole0303F418"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Service_task/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServicetaskExecutionRoleDefaultPolicy0B80B4A8"
+          }
+        ],
+        "/AwsEcsCdkGoStack/service_fargate/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "servicefargateService225BF04D"
+          }
+        ],
+        "/AwsEcsCdkGoStack/service_fargate/CloudmapService/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "servicefargateCloudmapService3A098AF6"
+          }
+        ],
+        "/AwsEcsCdkGoStack/worker_LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workerLB615300AA"
+          }
+        ],
+        "/AwsEcsCdkGoStack/worker_LB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workerLBSecurityGroupF026046F"
+          }
+        ],
+        "/AwsEcsCdkGoStack/worker_LB/SecurityGroup/to AwsEcsCdkGoStackECSsgCDEEC322:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workerLBSecurityGrouptoAwsEcsCdkGoStackECSsgCDEEC32280732A2095"
+          }
+        ],
+        "/AwsEcsCdkGoStack/worker_LB/worker_Listener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workerLBworkerListener61255649"
+          }
+        ],
+        "/AwsEcsCdkGoStack/worker_LB/worker_Listener/ECS1Group/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workerLBworkerListenerECS1GroupABC794AE"
+          }
+        ],
+        "/AwsEcsCdkGoStack/Worker_lb_output": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Workerlboutput"
+          }
+        ],
+        "/AwsEcsCdkGoStack/service_LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "serviceLB69FB7BC7"
+          }
+        ],
+        "/AwsEcsCdkGoStack/service_LB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "serviceLBSecurityGroup3F76F11A"
+          }
+        ],
+        "/AwsEcsCdkGoStack/service_LB/SecurityGroup/to AwsEcsCdkGoStackECSsgCDEEC322:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "serviceLBSecurityGrouptoAwsEcsCdkGoStackECSsgCDEEC322803EB2500F"
+          }
+        ],
+        "/AwsEcsCdkGoStack/service_LB/service_Listener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "serviceLBserviceListener2C5A8E2E"
+          }
+        ],
+        "/AwsEcsCdkGoStack/service_LB/service_Listener/ECS1Group/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "serviceLBserviceListenerECS1Group2ACFF153"
+          }
+        ],
+        "/AwsEcsCdkGoStack/service_lb_output": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "servicelboutput"
+          }
+        ],
+        "/AwsEcsCdkGoStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/AwsEcsCdkGoStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/AwsEcsCdkGoStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "AwsEcsCdkGoStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

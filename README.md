@@ -1,78 +1,82 @@
-# aws-cdk-assignment
+# ECS CDK Assignment Document
 
-# AWS ECS Deployment with Service and Workers
+Before deploying there is a few prerequisites.
 
-## Overview
-In this challenge, you will create a simple infrastructure for deploying a service and two workers using AWS ECS (Elastic Container Service) and AWS CDK (Cloud Development Kit). The goal is to automate the provisioning of the necessary resources and deploy the service and workers as separate ECS services.
+ - Node.js 14.15.0 or higher must be install
+ - AWS CDK cli must be install
+ - Go Must be install
+ - Docker must be installed and running.  
+ - AWS creds should be configured and active.
+ - CDK_DEFAULT_REGION and CDK_DEFAULT_ACCOUNT should be set.
 
-## Objective
-Develop an automated infrastructure provisioning and deployment system that:
-- Defines the necessary AWS resources using CDK in TypeScript or Python.
-- Deploys a service and two workers as separate ECS services.
-- Ensures the service and workers are running and accessible.
+# Architecture
+This architecure features one vpc. It has three subnet groups(public,data and service). The Public Subnet is internet facing, data and service are private subnets. These three subnet groups are spread across three different AZs. Within each AZ there is a nat gateway for HA. The ecs cluster is placed within the service subnet. In the public subnet lives a ALB that routes are traffic to the ecs cluster.
 
-## Requirements
-### Infrastructure Definition with CDK
-1. **CDK Setup:** Set up a new CDK project in TypeScript or Python.
-2. **VPC and Subnets:** Define a new VPC with public and private subnets using CDK constructs.
-3. **ECS Cluster:** Create an ECS cluster to host the service and workers.
-4. **Service Definition:** Define an ECS service for the main service component, specifying the task definition, desired count, and load balancer configuration.
-5. **Worker Definitions:** Define two separate ECS services for the workers, specifying the task definitions and desired counts.
+The ECS clusters holds two services. One for services and another for the workers.
 
-### Dockerization
-1. **Dockerfiles:** Create Dockerfiles for the service and worker components, specifying the necessary dependencies and configurations.
-2. **Docker Images:** Build Docker images for the service and workers and push them to Amazon Elastic Container Registry (ECR).
 
-### Deployment
-1. **CDK Deployment:** Use CDK to deploy the infrastructure and ECS services to your AWS account.
-2. **Service Accessibility:** Ensure the service is accessible via a load balancer or public IP address.
-3. **Worker Execution:** Verify that the workers are running and executing their intended tasks.
 
-### Documentation
-- Document the infrastructure architecture, deployment process, and any assumptions made.
-- Provide instructions on how to build and deploy the solution.
+## Installing Node.js 
+Follow the directions here depending on your OS and preference.  
+https://nodejs.org/en/download/package-manager
 
-## Evaluation Criteria
-- **Infrastructure as Code:** The effectiveness of using CDK to define and manage the AWS infrastructure.
-- **ECS Deployment:** The successful deployment of the service and workers as separate ECS services.
-- **Service Accessibility:** The accessibility and functionality of the deployed service.
-- **Worker Execution:** The proper execution and behavior of the deployed workers.
 
-## Submission Guidelines
-Submit your solution as a Git repository containing:
-- **CDK Code:** The CDK project files defining the AWS infrastructure.
-- **Dockerfiles:** The Dockerfiles for the service and worker components.
-- **Documentation:** Detailed documentation of the architecture, deployment process, and any assumptions or considerations.
+## Installing AWS CDK 
 
-## Setup Instructions
-1. Set up an AWS account and configure the necessary permissions and credentials.
-2. Install and configure AWS CLI and AWS CDK on your local machine.
-3. Create a new CDK project and define the infrastructure using CDK constructs.
-4. Implement the Dockerfiles for the service and worker components.
-5. Build the Docker images and push them to Amazon ECR.
-6. Deploy the infrastructure and ECS services using CDK.
-7. Verify the accessibility of the service and the execution of the workers.
-8. Document the architecture, deployment steps, and any assumptions or considerations.
+```
+npm install -g aws-cdk
+```
 
-## Estimated Time
-1. **Setting up the CDK project and defining the infrastructure:**
-  - If you are familiar with AWS and CDK, this could take around 1-2 hours.
-  - If you are new to CDK, it might take an additional 1-2 hours to learn the basics and set up the project.
+Run the following command to verify a successful installation. The AWS CDK CLI should output the version number:
 
-2. **Implementing the Dockerfiles for the service and worker components:**
-  - The time required for this task depends on the complexity of your service and worker components and your experience with Docker.
-  - On average, creating Dockerfiles and building the images could take around 1-2 hours.
+```
+cdk --version
+```
 
-3. **Deploying the infrastructure and ECS services using CDK:**
-  - Once you have the CDK project set up and the Dockerfiles ready, deploying the infrastructure and services should be relatively quick.
-  - Deploying and verifying the deployment could take around 30 minutes to 1 hour.
+## Install Go
 
-4. **Testing and documenting the solution:**
-  - Testing the accessibility of the service and the execution of the workers may take around 30 minutes to 1 hour.
-  - Documenting the architecture, deployment process, and assumptions could take another 1-2 hours.
+Click the link and install go depending on your OS/Machine
+https://go.dev/doc/install
 
-Considering these estimates, the total time required to complete this challenge could range from 4 to 8 hours, depending on your experience level and the complexity of your specific implementation.
+## Start Docker
+Ensure that Docker is downloaded and running. This can be accomplished by opening the docker desktop application or running the following command. (linux/MacOS)
+```
+sudo systemctl start docker
+```
+## Configured AWS Credentials 
 
-**Note:** Provide instructions on how to set up and configure AWS credentials instead of directly accepting them.
+This can be done two ways. Getting IAM access credentials or via SSO. You want to get an access key and secret for your iam user via the aws console. 
 
-Good luck, and we look forward to your solution!
+Or Use ```aws sso login``` from the command line to get credentials. 
+
+Once you get your keys and place them in the /.aws/credential file test your creds with 
+
+```aws sts get-caller-identity```
+
+AWS Documents it pretty well.
+https://docs.aws.amazon.com/workspaces-web/latest/adminguide/getting-started-iam-user-access-keys.html
+
+
+
+# Set Env Vars 
+This is optional but if this is not set than the subnets will only scale across two AZs so it is highly recommended to configure this. 
+
+This can be done with the following commands 
+```
+export CDK_DEFAULT_REGION = us-east-1
+export CDK_DEFAULT_ACCOUNT = 1234567890
+```
+
+Replace the region and account number with your account number and where you want to deploy
+
+## Deploying
+
+To deploy run ```cdk deploy``` from the root of the repo. This will build the docker images to your local PC. From there once the images built it will upload them to ecr and proceed to build out the rest of the environment
+
+## Destroying
+
+Run ```cdk destroy``` from the root of the repo. This will proceed to tear down the stack.
+
+## Testing and Verifying
+
+You can log into your aws account and check out all the newly built infrastructure. When the stack is finished you will be able to take the dns URL from the load balancers output and see a message from the work and service task. 
